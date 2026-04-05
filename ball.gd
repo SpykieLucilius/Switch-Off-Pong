@@ -5,6 +5,7 @@ var direction = Vector2.ZERO
 
 func _ready():
 	reset()
+	start_random_hide_loop()
 	
 func _physics_process(delta: float):
 	var collision = move_and_collide(direction * speed * delta)
@@ -24,6 +25,16 @@ func _physics_process(delta: float):
 			direction = direction.bounce(normale)
 			
 		position += normale * (collision.get_depth() + 1.0)
+
+func start_random_hide_loop() -> void:
+	while true:
+		await get_tree().create_timer(randf_range(4.0, 9.0)).timeout
+		if direction == Vector2.ZERO:
+			continue
+		$ColorRect.visible = false
+		await get_tree().create_timer(randf_range(1.5, 3.0)).timeout
+		$ColorRect.visible = true
+
 func reset():
 	var screen_center = get_viewport().get_visible_rect().size / 2.0
 	global_position = screen_center  
