@@ -9,85 +9,101 @@
 size = Vector2(20, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(1152, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(8, 664)
+size = Vector2(10, 664)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(8, 664)
+size = Vector2(10, 664)
 
 [node name="Main" type="Node2D" unique_id=2092328544]
 script = ExtResource("1_1bvp3")
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=1693102597]
+position = Vector2(0, 274)
 script = ExtResource("1_ig7tw")
 
 [node name="ColorRect" type="ColorRect" parent="Player1" unique_id=1023366475]
-offset_top = 136.0
 offset_right = 20.0
-offset_bottom = 236.0
+offset_bottom = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=1716538158]
-position = Vector2(10, 186)
+position = Vector2(10, 50)
 shape = SubResource("RectangleShape2D_7dm0k")
 
 [node name="Player2" type="CharacterBody2D" parent="." unique_id=894748323]
+position = Vector2(1132, 274)
 script = ExtResource("2_0xm2m")
 
 [node name="ColorRect" type="ColorRect" parent="Player2" unique_id=153872793]
-offset_left = 1132.0
-offset_top = 76.0
-offset_right = 1152.0
-offset_bottom = 176.0
+offset_right = 20.0
+offset_bottom = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" unique_id=123088316]
-position = Vector2(1142, 126)
+position = Vector2(10, 50)
 shape = SubResource("RectangleShape2D_7dm0k")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=171934698]
+position = Vector2(576, 324)
 collision_layer = 2
 script = ExtResource("3_h2yge")
 
 [node name="ColorRect" type="ColorRect" parent="Ball" unique_id=707804166]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1912495488]
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=980222559]
+position = Vector2(576, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=182188608]
-position = Vector2(576, -4)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="WallDown" type="StaticBody2D" parent="." unique_id=664804766]
+position = Vector2(576, 652)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallDown" unique_id=246424556]
-position = Vector2(576, 652)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="GoalLeft" type="Area2D" parent="." unique_id=289059857]
+position = Vector2(15, 324)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLeft" unique_id=1061960828]
-position = Vector2(-4, 324)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="GoalRight" type="Area2D" parent="." unique_id=2044176091]
+position = Vector2(1137, 324)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalRight" unique_id=2110132512]
-position = Vector2(1156, 324)
 shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="ScoreP1" type="Label" parent="." unique_id=505775266]
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 424.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="ScoreP2" type="Label" parent="." unique_id=1576064277]
+offset_left = 728.0
+offset_top = 16.0
+offset_right = 768.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
