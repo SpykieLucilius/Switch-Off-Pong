@@ -27,6 +27,9 @@ func _physics_process(delta: float):
 func reset():
 	var screen_center = get_viewport().get_visible_rect().size / 2.0
 	global_position = screen_center  
+	direction = Vector2.ZERO
+
+func launch():
 	var dir_x = [-1, 1].pick_random()
 	var dir_y = randf_range(-0.8, 0.8)
 	direction = Vector2(dir_x, dir_y).normalized()

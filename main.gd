@@ -7,12 +7,16 @@ var score_p2 = 0
 @onready var label_p2 = $ScoreP2
 @onready var victory_label = $VictoryLabel
 @onready var replay_button = $ReplayButton
+@onready var countdown_label = $CountdownLabel
 
-func check_win():
+func check_win() -> bool:
 	if score_p1 >= 5:
 		announce_winner("Player 1 Win !")
+		return true
 	elif score_p2 >= 5:
 		announce_winner("Player 2 Win !")
+		return true
+	return false
 
 func announce_winner(message):
 	victory_label.text = message
@@ -22,7 +26,7 @@ func announce_winner(message):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	start_countdown()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,7 +38,8 @@ func _on_goal_left_body_entered(body: Node2D) -> void:
 		score_p2 += 1
 		label_p2.text = str(score_p2)
 		body.reset()
-		check_win()
+		if not check_win():
+			start_countdown()
 
 
 func _on_goal_right_body_entered(body: Node2D) -> void:
@@ -42,8 +47,8 @@ func _on_goal_right_body_entered(body: Node2D) -> void:
 		score_p1 += 1
 		label_p1.text = str(score_p1)
 		body.reset()
-		check_win()
-
+		if not check_win():
+			start_countdown()
 
 func _on_replay_button_pressed() -> void:
 	replay_button.hide()
@@ -56,3 +61,12 @@ func _on_replay_button_pressed() -> void:
 	
 	$Ball.visible = true
 	$Ball.reset()
+	start_countdown()
+
+func start_countdown():
+	countdown_label.visible = true
+	for i in [3, 2, 1]:
+		countdown_label.text = str(i)
+		await get_tree().create_timer(1.0).timeout
+	countdown_label.visible = false
+	$Ball.launch()

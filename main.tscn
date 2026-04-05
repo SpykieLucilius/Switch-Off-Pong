@@ -122,8 +122,18 @@ offset_left = 476.0
 offset_top = 550.0
 offset_right = 676.0
 offset_bottom = 610.0
+theme_override_font_sizes/font_size = 40
 text = "Replay
 "
+
+[node name="CountdownLabel" type="Label" parent="." unique_id=404626121]
+offset_left = 376.0
+offset_top = 136.0
+offset_right = 776.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
