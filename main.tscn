@@ -107,5 +107,24 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 2
 
+[node name="VictoryLabel" type="Label" parent="." unique_id=924890996]
+offset_left = 128.0
+offset_top = 120.0
+offset_right = 1024.0
+offset_bottom = 529.00006
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReplayButton" type="Button" parent="." unique_id=898589345]
+visible = false
+offset_left = 476.0
+offset_top = 550.0
+offset_right = 676.0
+offset_bottom = 610.0
+text = "Replay
+"
+
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
