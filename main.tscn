@@ -9,6 +9,7 @@
 size = Vector2(20, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(1152, 8)
@@ -50,16 +51,16 @@ position = Vector2(1142, 126)
 shape = SubResource("RectangleShape2D_7dm0k")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=171934698]
+collision_layer = 2
 script = ExtResource("3_h2yge")
 
 [node name="ColorRect" type="ColorRect" parent="Ball" unique_id=707804166]
-offset_left = 502.0
-offset_top = 226.0
-offset_right = 522.0
-offset_bottom = 246.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1912495488]
-position = Vector2(512, 236)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=980222559]
@@ -75,12 +76,14 @@ position = Vector2(576, 652)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="GoalLeft" type="Area2D" parent="." unique_id=289059857]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLeft" unique_id=1061960828]
 position = Vector2(-4, 324)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="GoalRight" type="Area2D" parent="." unique_id=2044176091]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalRight" unique_id=2110132512]
 position = Vector2(1156, 324)

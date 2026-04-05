@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_goal_left_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
-		body.position = get_viewport_rect().size / 2
+		body.reset()
 
 
 func _on_goal_right_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
-		body.position = get_viewport_rect().size / 2
+		body.reset()
