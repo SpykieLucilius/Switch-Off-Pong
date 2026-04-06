@@ -4,5 +4,8 @@ const SPEED = 400.0
 
 func _physics_process(_delta):
 	var direction = Input.get_axis("p1_Up", "p1_Down")
-	velocity.y = direction * SPEED
-	move_and_slide()
+	if direction != 0:
+		velocity.y = direction * SPEED
+		move_and_slide()
+	else:
+		velocity.y = 0
