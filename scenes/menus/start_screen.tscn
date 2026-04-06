@@ -8,9 +8,9 @@ script = ExtResource("1_ncxyx")
 
 [node name="GameTitle" type="Label" parent="." unique_id=670712785]
 offset_left = 216.0
-offset_top = 168.0
+offset_top = 160.0
 offset_right = 936.0
-offset_bottom = 278.0
+offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 80
 text = "Switch-off Pong"
@@ -26,9 +26,9 @@ text = "Local Multiplayer"
 
 [node name="ComputerButton" type="Button" parent="." unique_id=1834506094]
 offset_left = 400.0
-offset_top = 328.0
+offset_top = 320.0
 offset_right = 750.0
-offset_bottom = 378.0
+offset_bottom = 370.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 30
 text = "VS Computer"
