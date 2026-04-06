@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://lw66nxr6aucp"
-path="res://.godot/imported/Doto_Rounded-SemiBold.ttf-c7cca6691d1047f11782ffbb57cc604f.fontdata"
+uid="uid://nk2ryojnnbsa"
+path="res://.godot/imported/Doto_Rounded-Bold.ttf-f3230d2d4bfa3ac565d0352b466aa3fb.fontdata"
 
 [deps]
 
-source_file="res://Doto_Rounded-SemiBold.ttf"
-dest_files=["res://.godot/imported/Doto_Rounded-SemiBold.ttf-c7cca6691d1047f11782ffbb57cc604f.fontdata"]
+source_file="res://assets/fonts/Doto_Rounded-Bold.ttf"
+dest_files=["res://.godot/imported/Doto_Rounded-Bold.ttf-f3230d2d4bfa3ac565d0352b466aa3fb.fontdata"]
 
 [params]
 

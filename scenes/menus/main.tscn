@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b21ulwwin4omc"]
 
-[ext_resource type="Script" uid="uid://djr4450ymuwa0" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="Script" uid="uid://ul6705e34rgp" path="res://player_1.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://dbrfe477enaax" path="res://player_2.gd" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://bdwe542u6uqp1" path="res://ball.gd" id="3_h2yge"]
-[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://Doto_Rounded-Bold.ttf" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://djr4450ymuwa0" path="res://scripts/menus/main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://ul6705e34rgp" path="res://scripts/players/player_1.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dbrfe477enaax" path="res://scripts/players/player_2.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bdwe542u6uqp1" path="res://scripts/players/ball.gd" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)

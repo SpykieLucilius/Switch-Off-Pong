@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5olk0sxlncs"]
 
-[ext_resource type="Script" uid="uid://cyox188tnr8q1" path="res://start_screen.gd" id="1_ncxyx"]
-[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://Doto_Rounded-Bold.ttf" id="2_pevhg"]
+[ext_resource type="Script" uid="uid://cyox188tnr8q1" path="res://scripts/menus/start_screen.gd" id="1_ncxyx"]
+[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="2_pevhg"]
 
 [node name="StartScreen" type="Node2D" unique_id=1867895430]
 script = ExtResource("1_ncxyx")
