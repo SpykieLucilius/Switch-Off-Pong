@@ -30,12 +30,9 @@ func _ai_move(delta):
 	reaction_timer -= delta
 	if reaction_timer <= 0:
 		reaction_timer = reaction_interval
-		# move randomly when the ball is hidden and moving towards the player
 		if ball.is_hidden and ball.direction.x < 0:
-			print("Ball is hidden, moving randomly")
 			target_y = global_position.y + randf_range(-200.0, 200.0)
 		else:
-			print("Tracking ball")
 			target_y = ball.global_position.y + randf_range(-40.0, 40.0)
 
 	var diff = target_y - global_position.y

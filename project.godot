@@ -15,6 +15,10 @@ run/main_scene="uid://b5olk0sxlncs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/img/icon.svg"
 
+[audio]
+
+driver/output_latency=5
+
 [autoload]
 
 GameManager="*uid://c1dxsqlochxan"

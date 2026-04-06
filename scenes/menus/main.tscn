@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dbrfe477enaax" path="res://scripts/players/player_2.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bdwe542u6uqp1" path="res://scripts/players/ball.gd" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://iv7rhrw5igto" path="res://assets/audio/sfx/paddleHit.wav" id="5_q4m8a"]
+[ext_resource type="AudioStream" uid="uid://2pj7eoe06tn6" path="res://assets/audio/sfx/wallHit.wav" id="6_edf0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
@@ -64,6 +66,12 @@ offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1912495488]
 shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="SfxPaddle" type="AudioStreamPlayer2D" parent="Ball" unique_id=1485375916]
+stream = ExtResource("5_q4m8a")
+
+[node name="SfxWall" type="AudioStreamPlayer2D" parent="Ball" unique_id=14843734]
+stream = ExtResource("6_edf0w")
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=980222559]
 position = Vector2(576, -4)
@@ -126,6 +134,7 @@ offset_left = 476.0
 offset_top = 550.0
 offset_right = 676.0
 offset_bottom = 610.0
+theme_override_fonts/font = ExtResource("5_lquwl")
 theme_override_font_sizes/font_size = 40
 text = "Replay
 "
