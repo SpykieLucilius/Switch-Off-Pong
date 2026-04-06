@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b5olk0sxlncs"]
+
+[ext_resource type="Script" uid="uid://cyox188tnr8q1" path="res://start_screen.gd" id="1_ncxyx"]
+
+[node name="StartScreen" type="Node2D" unique_id=1867895430]
+script = ExtResource("1_ncxyx")
+
+[node name="GameTitle" type="Label" parent="." unique_id=670712785]
+offset_left = 272.0
+offset_top = 96.0
+offset_right = 872.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 80
+text = "Switch-off Pong"
+
+[node name="MultiplayerButton" type="Button" parent="." unique_id=1853372307]
+offset_left = 448.0
+offset_top = 368.0
+offset_right = 705.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 30
+text = "Local Multiplayer"
+
+[node name="ComputerButton" type="Button" parent="." unique_id=1834506094]
+offset_left = 472.0
+offset_top = 264.0
+offset_right = 669.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 30
+text = "VS Computer"
+
+[connection signal="pressed" from="MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
+[connection signal="pressed" from="ComputerButton" to="." method="_on_ai_button_pressed"]

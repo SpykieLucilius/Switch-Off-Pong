@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Switch-Off Pong"
-run/main_scene="uid://b21ulwwin4omc"
+run/main_scene="uid://b5olk0sxlncs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://c1dxsqlochxan"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
