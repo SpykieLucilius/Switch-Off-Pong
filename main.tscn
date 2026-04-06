@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ul6705e34rgp" path="res://player_1.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dbrfe477enaax" path="res://player_2.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bdwe542u6uqp1" path="res://ball.gd" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://Doto_Rounded-Bold.ttf" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
@@ -95,7 +96,8 @@ offset_left = 384.0
 offset_top = 16.0
 offset_right = 424.0
 offset_bottom = 71.0
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 60
 text = "0"
 
 [node name="ScoreP2" type="Label" parent="." unique_id=1576064277]
@@ -103,7 +105,8 @@ offset_left = 728.0
 offset_top = 16.0
 offset_right = 768.0
 offset_bottom = 71.0
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 2
 
@@ -112,6 +115,7 @@ offset_left = 128.0
 offset_top = 120.0
 offset_right = 1024.0
 offset_bottom = 529.00006
+theme_override_fonts/font = ExtResource("5_lquwl")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -131,6 +135,7 @@ offset_left = 376.0
 offset_top = 136.0
 offset_right = 776.0
 offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("5_lquwl")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
