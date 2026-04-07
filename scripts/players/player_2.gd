@@ -18,16 +18,16 @@ func _ready():
 		match GameManager.difficulty:
 			"easy":
 				reaction_interval = 0.4
-				ai_speed = 250.0
+				ai_speed = 350.0
 				ai_error = 100.0
 			"medium":
 				reaction_interval = 0.2
-				ai_speed = 340.0
+				ai_speed = 400.0
 				ai_error = 60.0
 			"hard":
-				reaction_interval = 0.1
-				ai_speed = 400.0
-				ai_error = 30.0
+				reaction_interval = 0.05
+				ai_speed = 475.0
+				ai_error = 40.0
 
 func _physics_process(delta):
 	if is_ai:
@@ -55,3 +55,6 @@ func _ai_move(delta):
 	else:
 		velocity.y = 0
 	move_and_slide()
+
+func reset():
+	global_position.y = get_viewport().get_visible_rect().size.y / 2.0

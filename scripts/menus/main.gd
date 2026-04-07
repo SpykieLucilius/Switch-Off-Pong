@@ -12,6 +12,8 @@ var is_counting_down = false
 @onready var ball = $Ball
 @onready var sfx_goal = $SfxGoal
 @onready var sfx_replay = $SfxReplay
+@onready var player_1 = $Player1
+@onready var player_2 = $Player2
 
 func check_win() -> bool:
 	if score_p1 >= 5:
@@ -68,6 +70,8 @@ func start_countdown():
 	if is_counting_down:
 		return
 	is_counting_down = true
+	player_1.reset()
+	player_2.reset()
 	countdown_label.visible = true
 	for i in [3, 2, 1]:
 		countdown_label.text = str(i)

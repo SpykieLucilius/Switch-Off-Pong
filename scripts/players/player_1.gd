@@ -9,3 +9,6 @@ func _physics_process(_delta):
 		move_and_slide()
 	else:
 		velocity.y = 0
+
+func reset():
+	global_position.y = get_viewport().get_visible_rect().size.y / 2.0
