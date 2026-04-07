@@ -10,6 +10,8 @@ var is_counting_down = false
 @onready var replay_button = $ReplayButton
 @onready var countdown_label = $CountdownLabel
 @onready var ball = $Ball
+@onready var sfx_goal = $SfxGoal
+@onready var sfx_replay = $SfxReplay
 
 func check_win() -> bool:
 	if score_p1 >= 5:
@@ -33,6 +35,7 @@ func _on_goal_left_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
 		score_p2 += 1
 		label_p2.text = str(score_p2)
+		sfx_goal.play()
 		body.reset()
 		if not check_win():
 			start_countdown()
@@ -42,11 +45,13 @@ func _on_goal_right_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
 		score_p1 += 1
 		label_p1.text = str(score_p1)
+		sfx_goal.play()
 		body.reset()
 		if not check_win():
 			start_countdown()
 
 func _on_replay_button_pressed() -> void:
+	sfx_replay.play()
 	replay_button.hide()
 	victory_label.text = ""
 	

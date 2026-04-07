@@ -31,7 +31,6 @@ func _physics_process(delta: float):
 			direction = direction.bounce(normale)
 		position += normale * (collision.get_depth() + 1.0)
 
-	# Gestion de la disparition
 	if direction != Vector2.ZERO:
 		hide_timer -= delta
 		if hide_timer <= 0:

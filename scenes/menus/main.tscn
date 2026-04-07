@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="5_lquwl"]
 [ext_resource type="AudioStream" uid="uid://iv7rhrw5igto" path="res://assets/audio/sfx/paddleHit.wav" id="5_q4m8a"]
 [ext_resource type="AudioStream" uid="uid://2pj7eoe06tn6" path="res://assets/audio/sfx/wallHit.wav" id="6_edf0w"]
+[ext_resource type="AudioStream" uid="uid://bx1j8kcanwwxh" path="res://assets/audio/sfx/goal.wav" id="8_edf0w"]
+[ext_resource type="AudioStream" uid="uid://bstvfjiqcki2w" path="res://assets/audio/sfx/replay.wav" id="9_kbuax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
@@ -148,6 +150,12 @@ theme_override_fonts/font = ExtResource("5_lquwl")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SfxGoal" type="AudioStreamPlayer2D" parent="." unique_id=1071817642]
+stream = ExtResource("8_edf0w")
+
+[node name="SfxReplay" type="AudioStreamPlayer2D" parent="." unique_id=1626832276]
+stream = ExtResource("9_kbuax")
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
