@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
-const AI_SPEED = 340.0
 
+var ai_speed = 340.0
+var ai_error = 60.0
 var ball: Node2D = null
 var target_y: float = 0.0
 var reaction_timer: float = 0.0
@@ -14,6 +15,19 @@ func _ready():
 	if is_ai:
 		ball = get_node("/root/Main/Ball")
 		target_y = global_position.y
+		match GameManager.difficulty:
+			"easy":
+				reaction_interval = 0.4
+				ai_speed = 250.0
+				ai_error = 100.0
+			"medium":
+				reaction_interval = 0.2
+				ai_speed = 340.0
+				ai_error = 60.0
+			"hard":
+				reaction_interval = 0.1
+				ai_speed = 400.0
+				ai_error = 30.0
 
 func _physics_process(delta):
 	if is_ai:
@@ -33,11 +47,11 @@ func _ai_move(delta):
 		if ball.is_hidden and ball.direction.x < 0:
 			target_y = global_position.y + randf_range(-200.0, 200.0)
 		else:
-			target_y = ball.global_position.y + randf_range(-40.0, 40.0)
+			target_y = ball.global_position.y + randf_range(-ai_error, ai_error)
 
 	var diff = target_y - global_position.y
 	if abs(diff) > 10:
-		velocity.y = sign(diff) * AI_SPEED
+		velocity.y = sign(diff) * ai_speed
 	else:
 		velocity.y = 0
 	move_and_slide()

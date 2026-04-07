@@ -23,6 +23,7 @@ func _physics_process(delta: float):
 			var impact_relatif = clamp(distance_y / 50.0, -1.0, 1.0)
 			var dir_x = 1.0 if collider.name == "Player1" else -1.0
 			var angle_max = PI / 4.0
+			speed += 25.0
 			sfx_paddle.pitch_scale = 1.0 + abs(impact_relatif) * 0.4
 			sfx_paddle.play()
 			direction = Vector2(dir_x, impact_relatif * sin(angle_max)).normalized()
@@ -46,6 +47,7 @@ func reset():
 	var screen_center = get_viewport().get_visible_rect().size / 2.0
 	global_position = screen_center
 	direction = Vector2.ZERO
+	speed = 400.0
 	$ColorRect.visible = true
 	is_hidden = false
 	hide_timer = randf_range(4.0, 9.0)

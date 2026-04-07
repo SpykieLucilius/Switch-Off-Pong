@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://3nilg7jxxup1"]
+
+[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="1_84ck3"]
+[ext_resource type="Script" uid="uid://81uul4hjdfru" path="res://scripts/menus/difficulty_screen.gd" id="1_frb05"]
+
+[node name="difficulty_screen" type="Node2D" unique_id=261447241]
+script = ExtResource("1_frb05")
+
+[node name="DifficultyTitle" type="Label" parent="." unique_id=1333384606]
+offset_left = 168.0
+offset_top = 168.0
+offset_right = 984.0
+offset_bottom = 264.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 80
+text = "Choose difficulty"
+
+[node name="EasyButton" type="Button" parent="." unique_id=1642971297]
+offset_left = 208.0
+offset_top = 384.0
+offset_right = 368.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 50
+text = "Easy"
+
+[node name="MediumButton" type="Button" parent="." unique_id=1903009196]
+offset_left = 464.0
+offset_top = 384.0
+offset_right = 684.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 50
+text = "Medium"
+
+[node name="HardButton" type="Button" parent="." unique_id=2061925742]
+offset_left = 784.0
+offset_top = 384.0
+offset_right = 944.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 50
+text = "Hard"
+
+[connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="MediumButton" to="." method="_on_medium_button_pressed"]
+[connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]
