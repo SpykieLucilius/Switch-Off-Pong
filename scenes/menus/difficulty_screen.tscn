@@ -2,9 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="1_84ck3"]
 [ext_resource type="Script" uid="uid://81uul4hjdfru" path="res://scripts/menus/difficulty_screen.gd" id="1_frb05"]
+[ext_resource type="AudioStream" uid="uid://bpmaxj0o0suhc" path="res://assets/audio/sfx/buttonBeep.wav" id="3_sijg8"]
 
 [node name="difficulty_screen" type="Node2D" unique_id=261447241]
 script = ExtResource("1_frb05")
+sfx_button = ExtResource("3_sijg8")
 
 [node name="DifficultyTitle" type="Label" parent="." unique_id=1333384606]
 offset_left = 168.0
