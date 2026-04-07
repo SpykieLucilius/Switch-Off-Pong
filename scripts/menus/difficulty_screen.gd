@@ -19,3 +19,7 @@ func _on_hard_button_pressed():
 	GameManager.play_sfx(sfx_button)
 	GameManager.difficulty = "hard"
 	get_tree().change_scene_to_file("res://scenes/menus/main.tscn")
+
+func _on_back_button_pressed():
+	GameManager.play_sfx(sfx_button)
+	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")

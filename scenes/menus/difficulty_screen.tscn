@@ -44,6 +44,16 @@ theme_override_fonts/font = ExtResource("1_84ck3")
 theme_override_font_sizes/font_size = 50
 text = "Hard"
 
+[node name="HomeButton" type="Button" parent="." unique_id=1791097904]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 132.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
 [connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="MediumButton" to="." method="_on_medium_button_pressed"]
 [connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_back_button_pressed"]
