@@ -28,6 +28,10 @@ func _ready():
 				reaction_interval = 0.05
 				ai_speed = 475.0
 				ai_error = 40.0
+			"impossible":
+				reaction_interval = 0.0
+				ai_speed = 1000.0
+				ai_error = 0.0
 
 func _physics_process(delta):
 	if is_ai:

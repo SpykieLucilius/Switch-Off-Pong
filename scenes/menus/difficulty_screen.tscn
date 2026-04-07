@@ -13,6 +13,7 @@ offset_left = 168.0
 offset_top = 168.0
 offset_right = 984.0
 offset_bottom = 264.0
+mouse_filter = 0
 theme_override_fonts/font = ExtResource("1_84ck3")
 theme_override_font_sizes/font_size = 80
 text = "Choose difficulty"
@@ -53,7 +54,19 @@ theme_override_fonts/font = ExtResource("1_84ck3")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
+[node name="ImpossibleButton" type="Button" parent="." unique_id=1806730180]
+visible = false
+offset_left = 424.0
+offset_top = 488.0
+offset_right = 732.0
+offset_bottom = 557.0
+theme_override_fonts/font = ExtResource("1_84ck3")
+theme_override_font_sizes/font_size = 50
+text = "Impossible"
+
+[connection signal="gui_input" from="DifficultyTitle" to="." method="_on_difficulty_title_gui_input"]
 [connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="MediumButton" to="." method="_on_medium_button_pressed"]
 [connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ImpossibleButton" to="." method="_on_impossible_button_pressed"]
