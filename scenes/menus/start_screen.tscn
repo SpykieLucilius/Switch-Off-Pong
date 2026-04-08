@@ -6,7 +6,7 @@
 
 [node name="StartScreen" type="Node2D" unique_id=1867895430]
 script = ExtResource("1_ncxyx")
-sfx_button = ExtResource("3_ec65r")
+sfx_player = ExtResource("3_ec65r")
 
 [node name="GameTitle" type="Label" parent="." unique_id=670712785]
 offset_left = 216.0
@@ -35,5 +35,15 @@ theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 30
 text = "VS Computer"
 
+[node name="SettingsButton" type="Button" parent="." unique_id=1707897697]
+offset_left = 984.0
+offset_top = 48.0
+offset_right = 1104.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+
 [connection signal="pressed" from="MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="ComputerButton" to="." method="_on_ai_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -12,7 +12,7 @@ var is_counting_down = false
 @onready var countdown_label = $CountdownLabel
 @onready var ball = $Ball
 @onready var sfx_goal = $SfxGoal
-@export var sfx_button: AudioStream
+@export var sfx_player: AudioStream
 @onready var player_1 = $Player1
 @onready var player_2 = $Player2
 
@@ -55,8 +55,9 @@ func _on_goal_right_body_entered(body: Node2D) -> void:
 			start_countdown()
 
 func _on_replay_button_pressed() -> void:
-	GameManager.play_sfx(sfx_button)
+	GameManager.play_sfx(sfx_player)
 	replay_button.hide()
+	menu_button.hide()
 	victory_label.text = ""
 	
 	score_p1 = 0
@@ -69,7 +70,7 @@ func _on_replay_button_pressed() -> void:
 	start_countdown()
 
 func _on_menu_button_pressed() -> void:
-	GameManager.play_sfx(sfx_button)
+	GameManager.play_sfx(sfx_player)
 	menu_button.hide()
 	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 

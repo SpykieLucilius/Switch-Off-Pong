@@ -26,7 +26,7 @@ size = Vector2(20, 664)
 
 [node name="Main" type="Node2D" unique_id=2092328544]
 script = ExtResource("1_1bvp3")
-sfx_button = ExtResource("9_kbuax")
+sfx_player = ExtResource("9_kbuax")
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=1693102597]
 position = Vector2(15, 324)
@@ -72,9 +72,11 @@ shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="SfxPaddle" type="AudioStreamPlayer2D" parent="Ball" unique_id=1485375916]
 stream = ExtResource("5_q4m8a")
+bus = &"SFX"
 
 [node name="SfxWall" type="AudioStreamPlayer2D" parent="Ball" unique_id=14843734]
 stream = ExtResource("6_edf0w")
+bus = &"SFX"
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=980222559]
 position = Vector2(576, -4)
@@ -154,6 +156,7 @@ vertical_alignment = 1
 
 [node name="SfxGoal" type="AudioStreamPlayer2D" parent="." unique_id=1071817642]
 stream = ExtResource("8_edf0w")
+bus = &"SFX"
 
 [node name="MainMenuButton" type="Button" parent="." unique_id=1939781654]
 visible = false

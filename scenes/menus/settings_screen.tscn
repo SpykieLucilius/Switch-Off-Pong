@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://u4sr4kxloqsu"]
+
+[ext_resource type="Script" uid="uid://dahqmgmg4lgwh" path="res://scripts/menus/settings_screen.gd" id="1_t0qp0"]
+[ext_resource type="FontFile" uid="uid://nk2ryojnnbsa" path="res://assets/fonts/Doto_Rounded-Bold.ttf" id="2_1glqh"]
+[ext_resource type="AudioStream" uid="uid://bpmaxj0o0suhc" path="res://assets/audio/sfx/buttonBeep.wav" id="2_oulsc"]
+
+[node name="settings_screen" type="Node2D" unique_id=17405919]
+script = ExtResource("1_t0qp0")
+sfx_player = ExtResource("2_oulsc")
+
+[node name="SettingsTitle" type="Label" parent="." unique_id=1087655759]
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_1glqh")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+
+[node name="SfxSoundSlider" type="HSlider" parent="." unique_id=1074740181]
+offset_left = 384.0
+offset_top = 312.0
+offset_right = 960.0
+offset_bottom = 328.0
+
+[node name="SoundSettings" type="Label" parent="." unique_id=1550860559]
+offset_left = 64.0
+offset_top = 208.0
+offset_right = 484.0
+offset_bottom = 269.0
+theme_override_fonts/font = ExtResource("2_1glqh")
+theme_override_font_sizes/font_size = 50
+text = "Sound settings"
+
+[node name="SfxSettings" type="Label" parent="." unique_id=1298838834]
+offset_left = 120.0
+offset_top = 296.0
+offset_right = 330.0
+offset_bottom = 339.0
+theme_override_fonts/font = ExtResource("2_1glqh")
+theme_override_font_sizes/font_size = 35
+text = "SFX Volume"
+
+[node name="BackButton" type="Button" parent="." unique_id=1951494097]
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 164.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("2_1glqh")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[connection signal="value_changed" from="SfxSoundSlider" to="." method="_on_sfx_sound_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

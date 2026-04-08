@@ -6,7 +6,7 @@
 
 [node name="difficulty_screen" type="Node2D" unique_id=261447241]
 script = ExtResource("1_frb05")
-sfx_button = ExtResource("3_sijg8")
+sfx_player = ExtResource("3_sijg8")
 
 [node name="DifficultyTitle" type="Label" parent="." unique_id=1333384606]
 offset_left = 168.0

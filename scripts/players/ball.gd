@@ -42,7 +42,7 @@ func _physics_process(delta: float):
 			else:
 				_fade_out()
 				is_hidden = true
-				hide_timer = randf_range(1.5, 3.0)
+				hide_timer = randf_range(1.0, 2.0)
 
 func reset():
 	var screen_center = get_viewport().get_visible_rect().size / 2.0

@@ -2,11 +2,13 @@ extends Node
 
 var game_mode = "multiplayer"
 var difficulty = "normal"
-var _sfx_button: AudioStreamPlayer 
+var _sfx_player: AudioStreamPlayer 
+var sfx_volume = 0.5
 
 func play_sfx(stream: AudioStream):
-    if _sfx_button == null:
-        _sfx_button = AudioStreamPlayer.new()
-        add_child(_sfx_button)
-    _sfx_button.stream = stream
-    _sfx_button.play()
+    if _sfx_player == null:
+        _sfx_player = AudioStreamPlayer.new()
+        add_child(_sfx_player)
+        _sfx_player.bus = "SFX"
+    _sfx_player.stream = stream
+    _sfx_player.play()
