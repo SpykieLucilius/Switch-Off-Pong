@@ -50,5 +50,6 @@ theme_override_fonts/font = ExtResource("2_1glqh")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
+[connection signal="drag_ended" from="SfxSoundSlider" to="." method="_on_sfx_sound_slider_drag_ended"]
 [connection signal="value_changed" from="SfxSoundSlider" to="." method="_on_sfx_sound_slider_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

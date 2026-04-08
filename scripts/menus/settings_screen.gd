@@ -10,8 +10,9 @@ func _ready():
 	sfx_slider.value = GameManager.sfx_volume
 
 func _on_sfx_sound_slider_value_changed(value: float):
-	GameManager.sfx_volume = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
+
+func _on_sfx_sound_slider_drag_ended(_value_changed: bool):
 	GameManager.play_sfx(sfx_player)
 
 func _on_back_button_pressed():
