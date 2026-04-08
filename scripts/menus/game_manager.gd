@@ -3,7 +3,7 @@ extends Node
 var game_mode = "multiplayer"
 var difficulty = "normal"
 var _sfx_player: AudioStreamPlayer 
-var sfx_volume = 0.5
+var sfx_volume = 0.2
 
 func play_sfx(stream: AudioStream):
     if _sfx_player == null:

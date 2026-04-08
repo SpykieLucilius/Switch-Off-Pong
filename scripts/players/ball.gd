@@ -45,7 +45,8 @@ func _physics_process(delta: float):
 				hide_timer = randf_range(1.0, 2.0)
 
 func reset():
-	_tween.kill()
+	if _tween:
+		_tween.kill()
 	var screen_center = get_viewport().get_visible_rect().size / 2.0
 	global_position = screen_center
 	direction = Vector2.ZERO
