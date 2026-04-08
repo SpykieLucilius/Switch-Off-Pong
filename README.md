@@ -1,5 +1,7 @@
 # Switch-Off Pong
 
+![alt text](<assets/img/Switch-off Pong Cover.png>)
+
 A twist on the classic arcade game. In Switch-Off Pong, the rules are the same, but the arena's light isn't reliable. When the light flickers and dies, the ball disappears in the dark. Rely on your instincts and anticipate the trajectory to win!
 
 ## Deploy on Itch.io
