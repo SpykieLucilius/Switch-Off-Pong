@@ -7,7 +7,7 @@ func _ready():
 	sfx_slider.min_value = 0.0
 	sfx_slider.max_value = 1.0
 	sfx_slider.step = 0.01
-	sfx_slider.value = GameManager.sfx_volume
+	sfx_slider.set_value_no_signal(GameManager.sfx_volume)
 
 func _on_sfx_sound_slider_value_changed(value: float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
