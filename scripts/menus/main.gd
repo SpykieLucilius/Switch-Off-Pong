@@ -37,6 +37,7 @@ func _ready() -> void:
 
 func _on_goal_left_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
+		
 		score_p2 += 1
 		label_p2.text = str(score_p2)
 		sfx_goal.play()
@@ -72,6 +73,10 @@ func _on_replay_button_pressed() -> void:
 func _on_menu_button_pressed() -> void:
 	GameManager.play_sfx(sfx_player)
 	menu_button.hide()
+	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
+
+func _on_quit_button_pressed() -> void:
+	GameManager.play_sfx(sfx_player)
 	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 
 func start_countdown():

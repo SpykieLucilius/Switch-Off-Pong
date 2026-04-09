@@ -21,11 +21,8 @@ func _physics_process(_delta):
 	if direction != 0:
 		velocity.y = direction * SPEED
 	elif touch_target_y >= 0:
-		var diff = touch_target_y - global_position.y
-		if abs(diff) > 5:
-			velocity.y = sign(diff) * SPEED
-		else:
-			velocity.y = 0
+		global_position.y = touch_target_y
+		velocity.y = 0
 	else:
 		velocity.y = 0
 	move_and_slide()

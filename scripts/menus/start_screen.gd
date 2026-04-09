@@ -15,3 +15,7 @@ func _on_ai_button_pressed():
 func _on_settings_button_pressed():
 	GameManager.play_sfx(sfx_player)
 	get_tree().change_scene_to_file("res://scenes/menus/settings_screen.tscn")
+
+func _on_quit_button_pressed():
+	GameManager.play_sfx(sfx_player)
+	get_tree().quit()

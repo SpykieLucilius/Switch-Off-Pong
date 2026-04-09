@@ -200,7 +200,17 @@ position = Vector2(0, -5)
 points = PackedVector2Array(560, 56, 592, 56, 592, 88, 560, 88, 560, 56, 576, 56)
 width = 3.0
 
+[node name="QuitButton" type="Button" parent="." unique_id=944088547]
+offset_left = 1080.0
+offset_top = 40.0
+offset_right = 1119.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 25
+text = "X"
+
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
 [connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

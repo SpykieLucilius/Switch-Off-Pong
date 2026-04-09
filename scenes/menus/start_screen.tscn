@@ -36,10 +36,10 @@ theme_override_font_sizes/font_size = 30
 text = "VS Computer"
 
 [node name="SettingsButton" type="Button" parent="." unique_id=1707897697]
-offset_left = 984.0
-offset_top = 48.0
-offset_right = 1104.0
-offset_bottom = 80.0
+offset_left = 936.0
+offset_top = 40.0
+offset_right = 1056.0
+offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 20
 text = "Settings"
@@ -61,6 +61,16 @@ width = 3.0
 points = PackedVector2Array(536.2009, 215.79909, 496, 256)
 width = 3.0
 
+[node name="QuitButton" type="Button" parent="." unique_id=705867897]
+offset_left = 1080.0
+offset_top = 40.0
+offset_right = 1119.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 25
+text = "X"
+
 [connection signal="pressed" from="MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="ComputerButton" to="." method="_on_ai_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
