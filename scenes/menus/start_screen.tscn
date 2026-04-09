@@ -9,28 +9,28 @@ script = ExtResource("1_ncxyx")
 sfx_player = ExtResource("3_ec65r")
 
 [node name="GameTitle" type="Label" parent="." unique_id=670712785]
-offset_left = 216.0
-offset_top = 160.0
-offset_right = 936.0
-offset_bottom = 270.0
+offset_left = 220.0
+offset_top = 112.0
+offset_right = 940.0
+offset_bottom = 222.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 80
 text = "Switch-off Pong"
 
 [node name="MultiplayerButton" type="Button" parent="." unique_id=1853372307]
 offset_left = 400.0
-offset_top = 432.0
+offset_top = 496.0
 offset_right = 750.0
-offset_bottom = 482.0
+offset_bottom = 546.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 30
 text = "Local Multiplayer"
 
 [node name="ComputerButton" type="Button" parent="." unique_id=1834506094]
 offset_left = 400.0
-offset_top = 320.0
+offset_top = 384.0
 offset_right = 750.0
-offset_bottom = 370.0
+offset_bottom = 434.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 30
 text = "VS Computer"
@@ -43,6 +43,23 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 20
 text = "Settings"
+
+[node name="LampCord" type="Line2D" parent="." unique_id=1629200995]
+scale = Vector2(1, 0.9883721)
+points = PackedVector2Array(576, 153.78824, 576, 0)
+width = 3.0
+
+[node name="RayMiddle" type="Line2D" parent="." unique_id=1173969873]
+points = PackedVector2Array(576, 216, 576, 256)
+width = 3.0
+
+[node name="RayRight" type="Line2D" parent="." unique_id=828792701]
+points = PackedVector2Array(619.28015, 215.7521, 664, 256)
+width = 3.0
+
+[node name="RayLeft" type="Line2D" parent="." unique_id=2031615033]
+points = PackedVector2Array(536.2009, 215.79909, 496, 256)
+width = 3.0
 
 [connection signal="pressed" from="MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="ComputerButton" to="." method="_on_ai_button_pressed"]

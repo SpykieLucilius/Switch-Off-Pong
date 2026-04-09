@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 @onready var sfx_paddle = $SfxPaddle
 @onready var sfx_wall = $SfxWall
+@onready var sfx_flicker = $SfxFlicker
 
 const ANGLE_MAX = PI / 4.0
+
+@export var lamp_nodes: Array[Node] = []
 
 var speed = 400.0
 var direction = Vector2.ZERO
@@ -36,22 +39,25 @@ func _physics_process(delta: float):
 		hide_timer -= delta
 		if hide_timer <= 0:
 			if is_hidden:
-				_fade_in()
+				_flicker_in()
 				is_hidden = false
 				hide_timer = randf_range(4.0, 9.0)
 			else:
-				_fade_out()
+				_flicker_out()
 				is_hidden = true
 				hide_timer = randf_range(1.0, 2.0)
 
 func reset():
 	if _tween:
 		_tween.kill()
+	sfx_flicker.stop()
 	var screen_center = get_viewport().get_visible_rect().size / 2.0
 	global_position = screen_center
 	direction = Vector2.ZERO
 	speed = 400.0
 	$ColorRect.modulate.a = 1.0
+	for node in lamp_nodes:
+		node.visible = true
 	is_hidden = false
 	hide_timer = randf_range(4.0, 9.0)
 
@@ -60,14 +66,28 @@ func launch():
 	var dir_y = randf_range(-0.8, 0.8)
 	direction = Vector2(dir_x, dir_y).normalized()
 
-func _fade_out():
+func _flicker_out():
+	sfx_flicker.play()
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_property($ColorRect, "modulate:a", 0.0, 0.6)
+	for i in range(8):
+		_tween.tween_callback(_apply_state.bind(i % 2 == 0))
+		_tween.tween_interval(0.07)
+	_tween.tween_callback(_apply_state.bind(false))
 
-func _fade_in():
+func _flicker_in():
+	sfx_flicker.play()
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_property($ColorRect, "modulate:a", 1.0, 0.6)
+	for i in range(8):
+		_tween.tween_callback(_apply_state.bind(i % 2 != 0))
+		_tween.tween_interval(0.07)
+	_tween.tween_callback(_apply_state.bind(true))
+	_tween.tween_callback(sfx_flicker.stop)
+
+func _apply_state(on: bool):
+	$ColorRect.modulate.a = 1.0 if on else 0.0
+	for node in lamp_nodes:
+		node.visible = on

@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://iv7rhrw5igto" path="res://assets/audio/sfx/paddleHit.wav" id="5_q4m8a"]
 [ext_resource type="AudioStream" uid="uid://2pj7eoe06tn6" path="res://assets/audio/sfx/wallHit.wav" id="6_edf0w"]
 [ext_resource type="AudioStream" uid="uid://bx1j8kcanwwxh" path="res://assets/audio/sfx/goal.wav" id="8_edf0w"]
+[ext_resource type="AudioStream" uid="uid://c31c0sxqq32da" path="res://assets/audio/sfx/LampFlicker.wav" id="8_tigs5"]
 [ext_resource type="AudioStream" uid="uid://bpmaxj0o0suhc" path="res://assets/audio/sfx/buttonBeep.wav" id="9_kbuax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
@@ -56,10 +57,11 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" unique_id=123088316]
 shape = SubResource("RectangleShape2D_7dm0k")
 
-[node name="Ball" type="CharacterBody2D" parent="." unique_id=171934698]
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=171934698 node_paths=PackedStringArray("lamp_nodes")]
 position = Vector2(576, 324)
 collision_layer = 2
 script = ExtResource("3_h2yge")
+lamp_nodes = [NodePath("../RayMiddle"), NodePath("../RayRight"), NodePath("../RayLeft")]
 
 [node name="ColorRect" type="ColorRect" parent="Ball" unique_id=707804166]
 offset_left = -10.0
@@ -76,6 +78,10 @@ bus = &"SFX"
 
 [node name="SfxWall" type="AudioStreamPlayer2D" parent="Ball" unique_id=14843734]
 stream = ExtResource("6_edf0w")
+bus = &"SFX"
+
+[node name="SfxFlicker" type="AudioStreamPlayer2D" parent="Ball" unique_id=154072553]
+stream = ExtResource("8_tigs5")
 bus = &"SFX"
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=980222559]
@@ -167,6 +173,32 @@ offset_bottom = 584.0
 theme_override_fonts/font = ExtResource("5_lquwl")
 theme_override_font_sizes/font_size = 40
 text = "Main menu"
+
+[node name="LampCord" type="Line2D" parent="." unique_id=1787798824]
+position = Vector2(0, -101.03488)
+scale = Vector2(1, 0.9883721)
+points = PackedVector2Array(576, 153.78824, 576, 97.9102)
+width = 3.0
+
+[node name="RayMiddle" type="Line2D" parent="." unique_id=667212402]
+position = Vector2(0, -101.03488)
+points = PackedVector2Array(576, 216, 576, 256)
+width = 3.0
+
+[node name="RayRight" type="Line2D" parent="." unique_id=1214219009]
+position = Vector2(0, -101.03488)
+points = PackedVector2Array(619.28015, 215.7521, 664, 256)
+width = 3.0
+
+[node name="RayLeft" type="Line2D" parent="." unique_id=1859492205]
+position = Vector2(0, -101.03488)
+points = PackedVector2Array(536.2009, 215.79909, 496, 256)
+width = 3.0
+
+[node name="LampBulb" type="Line2D" parent="." unique_id=1493765677]
+position = Vector2(0, -5)
+points = PackedVector2Array(560, 56, 592, 56, 592, 88, 560, 88, 560, 56, 576, 56)
+width = 3.0
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
